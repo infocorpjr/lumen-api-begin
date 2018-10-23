@@ -13,7 +13,7 @@ class Contact extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id')->nullable()->coment('Nome');
             $table->string('name')->nullable()->coment('Nome');
             $table->string('email')->nullable()->coment('Email');
