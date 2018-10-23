@@ -1,5 +1,7 @@
 <?php
 
+$start = microtime(true);
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -11,7 +13,7 @@
 |
 */
 
-$app = require __DIR__.'/../bootstrap/app.php';
+$app = require __DIR__ . '/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,5 @@ $app = require __DIR__.'/../bootstrap/app.php';
 */
 
 $app->run();
+
+$end = microtime(true);
