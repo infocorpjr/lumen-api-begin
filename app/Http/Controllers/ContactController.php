@@ -34,18 +34,4 @@ class ContactController extends Controller
         return response()->json($Contact, 201);
     }
 
-    public function update($id, Request $request)
-    {
-        $Contact = Contact::findOrFail($id);
-        $Contact->update($request->all());
-
-        return response()->json($Contact, 200);
-    }
-
-    public function delete($id)
-    {
-        Contact::findOrFail($id)->delete();
-        return response('Deleted Successfully', 200);
-    }
-
 }

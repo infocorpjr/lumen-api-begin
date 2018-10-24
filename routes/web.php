@@ -16,13 +16,19 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
+    // API CONTATO
+    // index
     $router->get('contato',  ['uses' => 'ContactController@index']);
-
+    // show
     $router->get('contato/{id}', ['uses' => 'ContactController@show']);
-
+    // create
     $router->post('contato', ['uses' => 'ContactController@create']);
 
-    $router->delete('contato/{id}', ['uses' => 'ContactController@delete']);
-
-    $router->put('contato/{id}', ['uses' => 'ContactController@update']);
+    // API BRIEF
+    // index
+    $router->get('brief',  ['uses' => 'BriefController@index']);
+    // show
+    $router->get('brief/{id}', ['uses' => 'BriefController@show']);
+    // create
+    $router->post('brief', ['uses' => 'BriefController@create']);
 });
