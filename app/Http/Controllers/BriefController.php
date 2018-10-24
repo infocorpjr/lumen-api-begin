@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Brief;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class BriefController extends Controller
 {
 
     public function index()
     {
-        $contact = Contact::all();
+        $contact = Brief::all();
         return response()->json($contact);
     }
 
@@ -21,15 +21,16 @@ class ContactController extends Controller
 
     public function create(Request $request)
     {
-        $rules = [
-            'name' => 'required|max:255',
-            'email' => 'required|max:255|email',
-            'subject' => 'required'
+        return [
+            'nome' => 'required|max:255',
+            'trabalho' => 'required|max:255',
+            'email' => 'required',
+            'telefone' => 'required'
         ];
 
         $this->validate($request, $rules);
 
-        $Contact = Contact::create($request->all());
+        $Contact = Brief::create($request->all());
 
         return response()->json($Contact, 201);
     }
