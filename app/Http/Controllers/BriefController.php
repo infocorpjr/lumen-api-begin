@@ -16,12 +16,12 @@ class BriefController extends Controller
 
     public function show($id)
     {
-        return response()->json(Contact::find($id));
+        return response()->json(Brief::find($id));
     }
 
     public function create(Request $request)
     {
-        return [
+        $rules = [
             'nome' => 'required|max:255',
             'trabalho' => 'required|max:255',
             'email' => 'required',
